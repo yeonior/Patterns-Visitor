@@ -5,7 +5,6 @@
 //  Created by Ruslan on 29.01.2022.
 //
 
-import Foundation
 import UIKit
 
 class FirstCell: UITableViewCell {
@@ -18,4 +17,22 @@ class SecondCell: UITableViewCell {
 
 class ThirdCell: UITableViewCell {
     // something
+}
+
+extension FirstCell: ColorResultVisitable {
+    func accept(_ visitor: ColorResultVisitor) -> UIColor {
+        return visitor.visit(self)
+    }
+}
+
+extension SecondCell: ColorResultVisitable {
+    func accept(_ visitor: ColorResultVisitor) -> UIColor {
+        return visitor.visit(self)
+    }
+}
+
+extension ThirdCell: ColorResultVisitable {
+    func accept(_ visitor: ColorResultVisitor) -> UIColor {
+        return visitor.visit(self)
+    }
 }
